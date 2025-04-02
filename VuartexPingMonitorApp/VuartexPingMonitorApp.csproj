@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+
+  <PropertyGroup>
+  <ApplicationIcon>internet.ico</ApplicationIcon>
+  <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="internet.ico" />
+    <None Remove="speedtest.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+  <EmbeddedResource Include="internet.ico" />
+  <EmbeddedResource Include="speedtest.exe">
+    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+  </EmbeddedResource>
+</ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="9.0.3" />
+  </ItemGroup>
+
+</Project>
